@@ -4,7 +4,7 @@ var Queue = function() {
   someInstance.lineLength = 0;
   someInstance.endOfLine = 0;
   someInstance.frontOfLine = 0;
-  _.extend(someInstance,queueMethods);
+  _.extend(someInstance, queueMethods);
 
 
   return someInstance;
@@ -18,9 +18,9 @@ queueMethods.enqueue = function(value) {
 };
 
 queueMethods.dequeue = function() {
-  if(this.lineLength === 0) {
+  if (this.lineLength === 0) {
     return;
-  } else{
+  } else {
     this.lineLength--;
   }
 };
