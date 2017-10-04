@@ -14,15 +14,17 @@ var queueMethods = {};
 
 queueMethods.enqueue = function(value) {
   this.storage.endofLine = value;
-  console.log(this.size);
-  this.size++;
+  this.lineLength++;
 };
 
 queueMethods.dequeue = function() {
-  this.size--;
+  if(this.lineLength === 0) {
+    return;
+  } else{
+    this.lineLength--;
+  }
 };
 
 queueMethods.size = function() {
-  console.log('Made it into the size method')
   return this.lineLength;
 };
