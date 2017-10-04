@@ -9,10 +9,17 @@ var Queue = function() {
 
   someInstance.enqueue = function(value) {
     size++;
+    storage[size] = value;
   };
 
   someInstance.dequeue = function() {
+    if(size === 0) {
+      return;
+    }
+    var result = storage[1];
+    delete storage[1];
     size--;
+    return result;
   };
 
   someInstance.size = function() {
