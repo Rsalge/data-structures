@@ -10,9 +10,9 @@ var Stack = function() {
 var stackMethods = {};
 
 stackMethods.pop = function() {
-  if( this.stackLength === 0){
+  if ( this.stackLength === 0 ) {
     return;
-  } else{
+  } else {
     var value = this.storage[this.stackLength];
     delete this.storage[this.stackLength];
     this.stackLength--;
