@@ -5,12 +5,15 @@ var Queue = function() {
   var storage = {};
   var size = 0;
   var placeInQueue = 1;
+  var key = 0;
+  var endOfLine = 1;
 
   // Implement the methods below
 
   someInstance.enqueue = function(value) {
     size++;
-    storage[size] = value;
+    storage[endOfLine] = value;
+    endOfLine++;
   };
 
   someInstance.dequeue = function() {
@@ -20,9 +23,7 @@ var Queue = function() {
     var result = storage[placeInQueue];
     delete storage[placeInQueue];
     size--;
-    if( size !== 0 ) {
-      placeInQueue++;
-    }
+    placeInQueue++;
     return result;
   };
 
