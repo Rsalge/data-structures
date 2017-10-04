@@ -4,6 +4,7 @@ var Queue = function() {
   // Use an object with numeric keys to store values
   var storage = {};
   var size = 0;
+  var placeInQueue = 1;
 
   // Implement the methods below
 
@@ -16,9 +17,12 @@ var Queue = function() {
     if(size === 0) {
       return;
     }
-    var result = storage[1];
-    delete storage[1];
+    var result = storage[placeInQueue];
+    delete storage[placeInQueue];
     size--;
+    if( size !== 0 ) {
+      placeInQueue++;
+    }
     return result;
   };
 
