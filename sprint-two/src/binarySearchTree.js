@@ -39,13 +39,13 @@ BinarySearchTree.prototype.insert = function(value, node) {
 
 BinarySearchTree.prototype.contains = function(value) {
   //searches tree for value
-  if(this.value === value) {
+  if (this.value === value) {
     return true;
   } else if (this.right.value === value) {
     return true;
   } else if (this.left.value === value) {
     return true;
-  } else if(value > this.right.value) {
+  } else if (value > this.right.value) {
 
   }
 };
