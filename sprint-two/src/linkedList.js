@@ -18,11 +18,16 @@ var LinkedList = function() {
     if (list.head === null) {
       return;
     } else {
+      var headValue = list.head.value;
       list.head = list.head.next;
+      return headValue;
     }
   };
 
   list.contains = function(target) {
+    if ( list.value === target ) {
+      return true;
+    }
   };
 
   return list;
