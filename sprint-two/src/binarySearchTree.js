@@ -6,22 +6,6 @@ var BinarySearchTree = function(value) {
 };
 
 BinarySearchTree.prototype.insert = function(value, node) {
-  //places a value into a specific index
-  var leftOrRight = function(value, node) {
-    if (value > node.value) {
-      if (node.right === null) {
-        node.right = new BinarySearchTree(value);
-      } else if (value > node.right.value) {
-        leftOrRight(value, node.right);
-      }
-    } else if (value < node.value) {
-      if (node.left === null) {
-        node.left = new BinarySearchTree(value);
-      } else {
-        leftOrRight(value, node.left);
-      }
-    }
-  };
   if (value > this.value) {
     if (this.right === null) {
       this.right = new BinarySearchTree(value);
@@ -41,11 +25,18 @@ BinarySearchTree.prototype.contains = function(value) {
   //searches tree for value
   if (this.value === value) {
     return true;
-  } else if (this.right.value === value) {
-    return true;
-  } else if (this.left.value === value) {
-    return true;
-  } else if (value > this.right.value) {
+  } else if (value > this.value) {
+    if (this.right === null) {
+      return false;
+    } else {
+      return this.right.contains(value);
+    }
+  } else if (value < this.value) {
+    if (this.left === null) {
+      return false;
+    } else {
+      return this.left.contains(value);
+    }
 
   }
 };
