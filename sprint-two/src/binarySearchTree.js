@@ -8,7 +8,7 @@ var BinarySearchTree = function(value) {
 BinarySearchTree.prototype.insert = function(value) {
   //places a value into a specific index
   var leftOrRight = function(value, node) {
-    if (value > node){
+    if (value > node) {
       if (node.right === undefined) {
         node.right.value = value;
       } else if (value > node.right) {
@@ -29,7 +29,7 @@ BinarySearchTree.prototype.insert = function(value) {
       leftOrRight(value, this.right);
     }
   } else if (value < this.value) {
-    if( this.left === undefined) {
+    if ( this.left === undefined) {
       this.left['value'] = value;
     } else if (value < this.left) {
       leftOrRight(value, this.left);
