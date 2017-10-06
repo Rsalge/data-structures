@@ -6,6 +6,7 @@ var HashTable = function() {
 };
 
 HashTable.prototype.insert = function(k, v) {
+  // time complexity of O(1)
   var index = getIndexBelowMaxForKey(k, this._limit);
   var existing = this._storage.get(index);
   if(existing) {
@@ -24,6 +25,7 @@ HashTable.prototype.insert = function(k, v) {
 };
 
 HashTable.prototype.retrieve = function(k) {
+  // time complexity of O(1) ideally, but can be O(n) in the worst case scenario
   var index = getIndexBelowMaxForKey(k, this._limit);
   var existing = this._storage.get(index);
   if(existing) {
@@ -32,14 +34,11 @@ HashTable.prototype.retrieve = function(k) {
         return existing[i][1];
       }
     }
-  } else {
-    if ( existing ) {
-      return this._storage.get(index);
-    }
   }
 };
 
 HashTable.prototype.remove = function(k) {
+  // time complexity of O(1) ideally, but can be O(n) in the worst case scenario
   var index = getIndexBelowMaxForKey(k, this._limit);
   this._storage.set(index, undefined);
 };
