@@ -4,13 +4,13 @@ var LinkedList = function() {
   list.tail = null;
 
   list.addToTail = function(value) {
+    var newNode = new Node(value);
     if (list.tail === null) {
-      var newNode = new Node(value);
       list.tail = newNode;
       list.head = newNode;
     } else {
-      list.tail.next = new Node(value);
-      list.tail = new Node(value);
+      list.tail.next = newNode ;
+      list.tail = newNode;
     }
   };
 
@@ -39,7 +39,6 @@ var LinkedList = function() {
         break;
       }
     }
-    return false;
     //below is an attempt at a reursive solution for .contains
     // else if ( list.head.value === target ) {
     //   return true;
@@ -48,6 +47,7 @@ var LinkedList = function() {
     // } else {
     //   list.head.next.contains(target);
     // }
+    return false;
   };
 
   return list;
