@@ -25,15 +25,29 @@ var LinkedList = function() {
   };
 
   list.contains = function(target) {
-    if ( list.head === null ) {
+    if ( !list.head ) {
       return false;
-    } else if ( list.head.value === target ) {
-      return true;
-    } else if ( list.head.next === null ) {
-      return false;
-    } else {
-      list.head.next.contains(target);
     }
+    var currentValue = list.head.value;
+    while(currentValue) {
+      if( currentValue === target ) {
+        return true;
+      } else if ( list.head.next ){
+        currentValue = list.head.next.value;
+        list.removeHead();
+      } else {
+        break;
+      }
+    }
+    return false;
+    //below is an attempt at a reursive solution for .contains
+    // else if ( list.head.value === target ) {
+    //   return true;
+    // } else if ( list.head.next === null ) {
+    //   return false;
+    // } else {
+    //   list.head.next.contains(target);
+    // }
   };
 
   return list;
