@@ -29,10 +29,10 @@ var LinkedList = function() {
       return false;
     }
     var currentValue = list.head.value;
-    while(currentValue) {
-      if( currentValue === target ) {
+    while (currentValue) {
+      if ( currentValue === target ) {
         return true;
-      } else if ( list.head.next ){
+      } else if ( list.head.next ) {
         currentValue = list.head.next.value;
         list.removeHead();
       } else {
