@@ -6,6 +6,7 @@ var BinarySearchTree = function(value) {
 };
 
 BinarySearchTree.prototype.insert = function(value, node) {
+// time complexity of O(log(n))
   if (value > this.value) {
     if (this.right === null) {
       this.right = new BinarySearchTree(value);
@@ -22,7 +23,7 @@ BinarySearchTree.prototype.insert = function(value, node) {
 };
 
 BinarySearchTree.prototype.contains = function(value) {
-  //searches tree for value
+  //time complexity of O(log(n))
   if (this.value === value) {
     return true;
   } else if (value > this.value) {
@@ -41,7 +42,7 @@ BinarySearchTree.prototype.contains = function(value) {
 };
 
 BinarySearchTree.prototype.depthFirstLog = function(callback) {
-  //accepts a callback function and applys it to all the values in the tree
+  //time complexity of O(n)
   if (this.value !== null) {
     callback(this.value);
   }
