@@ -51,5 +51,11 @@ describe('linkedList', function() {
     expect(linkedList.contains(4)).to.equal(false);
   });
 
+  it('should return undefined when calling removeHead on an empty link list', function() {
+    linkedList.addToTail(600);
+    linkedList.removeHead();
+    expect(linkedList.removeHead()).to.equal(undefined);
+  });
+
   // add more tests here to test the functionality of linkedList
 });
