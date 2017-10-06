@@ -15,15 +15,14 @@ treeMethods.addChild = function(value) {
 };
 
 treeMethods.contains = function(target) {
-  if ( !this.value ) {
-    return false;
-  } else if ( this.value === target ) {
+  if ( this.value === target ) {
     return true;
   } else {
     for ( var i = 0; i < this.children.length; i++) {
-      this.children[i].contains(target);
+      return this.children[i].contains(target);
     }
   }
+  return false;
 };
 
 
