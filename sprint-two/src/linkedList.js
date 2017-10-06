@@ -4,6 +4,7 @@ var LinkedList = function() {
   list.tail = null;
 
   list.addToTail = function(value) {
+    //time complexity of O(1)
     var newNode = new Node(value);
     if (list.tail === null) {
       list.tail = newNode;
@@ -15,6 +16,7 @@ var LinkedList = function() {
   };
 
   list.removeHead = function() {
+    //time complexity of O(1)
     if (list.head === null) {
       return;
     } else {
@@ -25,6 +27,7 @@ var LinkedList = function() {
   };
 
   list.contains = function(target) {
+    //time complexity of O(N)
     if ( !list.head ) {
       return false;
     }
@@ -39,14 +42,6 @@ var LinkedList = function() {
         break;
       }
     }
-    //below is an attempt at a reursive solution for .contains
-    // else if ( list.head.value === target ) {
-    //   return true;
-    // } else if ( list.head.next === null ) {
-    //   return false;
-    // } else {
-    //   list.head.next.contains(target);
-    // }
     return false;
   };
 
