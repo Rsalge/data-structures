@@ -11,10 +11,12 @@ var Tree = function(value) {
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
+  //time complexity of O(1)
   this.children.push(Tree(value));
 };
 
 treeMethods.contains = function(target) {
+  // time complexity of O(n)
   if ( this.value === target ) {
     return true;
   } else if ( this.children.length !== 0 ) {
