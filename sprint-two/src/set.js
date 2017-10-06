@@ -8,12 +8,14 @@ var Set = function() {
 var setPrototype = {};
 
 setPrototype.add = function(item) {
+  // time complexity of O(1)
   if ( !this.contains(item) ) {
     this._storage.push(item);
   }
 };
 
 setPrototype.contains = function(item) {
+// time complexity of O(n)
   for ( var i=0; i < this._storage.length; i++ ) {
     if ( this._storage[i] === item ) {
       return true;
@@ -23,6 +25,7 @@ setPrototype.contains = function(item) {
 };
 
 setPrototype.remove = function(item) {
+// time complexity of O(n)
   for ( var i=0; i < this._storage.length; i++ ) {
     if ( this._storage[i] === item ) {
       this._storage.splice(i,1);
